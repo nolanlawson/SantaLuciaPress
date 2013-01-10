@@ -1,0 +1,40 @@
+html {
+    background : #ddd;
+    padding : 2em 0 2em 0;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #333;
+	margin: 0 auto;
+	max-width: 800px;
+	background: #FFF;
+	-webkit-box-shadow: 0 0 .3em #333;
+    box-shadow: 0 0 .3em #333;
+	font-family: Helvetica, Arial;
+}
+
+img {
+	border: 0;
+}
+
+h1 {
+	color: #fc8524;
+	border-bottom: 1px solid #ccc;
+	font-weight: normal;
+	font-size: 1.6em;
+	padding: 5px 0 10px;
+	margin: 0px;
+}
+
+p {
+	padding-top: 15px;
+	margin: 0px;
+	line-height: 1.5em;
+	font-size: 0.9em;
+}
+
+a {
+	color: #fc8524;
+}
