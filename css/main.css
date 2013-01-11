@@ -168,11 +168,22 @@ li#tumblr {
 }
 
 #image-thumbnails a {
-    margin : 0 10px 0 10px;
-    height : 100%;
-    border : 0;
-    outline: 0;
+    margin    : 10px 10px 10px 10px;
+    height    : 100%;
+    border    : 0;
+    outline   : 0;
+    display   : inline-block;
 }
+
+#image-thumbnails a:hover {
+    /* Fallback for web browsers that doesn't support RGBa */
+    background: rgb(255, 255, 255);
+    /* RGBa with opacity */
+    background: rgba(255, 255, 255, 0.4);
+    
+    border-radius      : 3px;
+}
+
 
 #image-thumbnails a img {
     /* (800 / 4) - 20 for the gutter */

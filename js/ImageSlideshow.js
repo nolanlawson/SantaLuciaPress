@@ -78,8 +78,7 @@
                 // ColorBox properties
                 $(".thumbnail").colorbox({
                     rel: groupName,
-                    slideshow: true,
-                    transition: "fade",
+                    transition: "elastic",
                     width: "75%",
                     height: "75%"
                 });
