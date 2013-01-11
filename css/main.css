@@ -8,11 +8,15 @@ body {
 	padding: 0px;
 	color: #333;
 	margin: 0 auto;
-	max-width: 800px;
+	max-width: 960px;
 	background: #FFF;
 	-webkit-box-shadow: 0 0 .3em #333;
     box-shadow: 0 0 .3em #333;
 	font-family: Helvetica, Arial;
+}
+
+.container {
+    margin: 0 10px 0 10px;
 }
 
 img {
