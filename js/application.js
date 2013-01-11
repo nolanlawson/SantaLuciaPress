@@ -30,58 +30,48 @@
             // slide the image down 467 * 2 pixels for the "selected" image
             // when we're on that particular page (e.g. the hash is #letterpress)
             $('ul#main-pages')
-            .find('li#' + hash)
-            .addClass('selected')
-            .end()
-            .find('li')
-            .not('#' + hash)
-            .removeClass('selected');
+                .find('li#' + hash)
+                    .addClass('selected')
+                .end()
+                .find('li')
+                .not('#' + hash)
+                    .removeClass('selected');
         }
+        
+        $('ul#main-pages li a').trigger('redraw-link');
     };
-    
-    var resetSelectedLinks = function() {
-        // slide the image down 467 * 2 pixels for the "selected" image
-        // when we're on that particular page (e.g. the hash is #letterpress)
-        $('ul#main-pages')
-        .find('li.selected')
-            .not('.hovering')
-            .find('a')
-                .each(function(idx, element){
-                    var self = $(element);
-                
-                    var newBackground = getNewBackground(self, imageMapHeight * 2);
-                    self.css('background', newBackground);
-                })
-            .end()
-            .end()
-        .end()
-        .find('li')
-        .not('.selected')
-            .find('a')
-            .css('background', '');
-    }
 
     // when hovering, just slide the image down 467 pixels
     $('ul#main-pages li a').hover(function() {
         var self = $(this);
 
-        var newBackground = getNewBackground(self, imageMapHeight);
-        self.css('background', newBackground);
-        
         self.parent().addClass('hovering');
+        self.trigger('redraw-link');
 
     }, function() {
         var self = $(this);
         
-        if (self.parent().hasClass('selected')) { // blue (selected)
-            var newBackground = getNewBackground(self, imageMapHeight * 2);
-            self.css('background', newBackground);
-        } else { // not blue
-            self.css('background', '');
+        self.parent().removeClass('hovering');
+        self.trigger('redraw-link');
+    })
+    
+    $('ul#main-pages li a').bind('redraw-link', function(){
+        var self = $(this);
+        
+        var hovering = self.parent().hasClass('hovering');
+        var selected = self.parent().hasClass('selected');
+        
+        var background = '';
+        
+        if (hovering) {
+            // 'hovering' image is one down
+            background = getNewBackground(self, imageMapHeight);
+        } else if (selected) {
+            // 'selected' image is two down
+            background = getNewBackground(self, imageMapHeight * 2)
         }
         
-        self.parent().removeClass('hovering');
-        
+        self.css('background', background);
     })
 
     // add an obfuscated email address courtesy of http://www.javascriptobfuscator.com/
@@ -92,14 +82,10 @@
     
 
     handleHashChange();
-    resetSelectedLinks();
         
     // handle the hash if something is clicked on in this group
     window.onhashchange = function(){
         handleHashChange();
-        resetSelectedLinks();
     }
     
-
-
 })(jQuery);
