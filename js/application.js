@@ -5,7 +5,7 @@
 (function() {
 
     var imageMapHeight = parseInt($('ul#main-pages').css('height'));
-    var imageSrc = 'images/mainpagemain_all.jpg';
+    var imageUrl = $('ul#main-pages').css('background').match(/url\([^)]+\)/);
 
     /** get a new css 'background' value depending on how far we need to shift down 
     */
@@ -13,7 +13,7 @@
         var newLeft = -parseInt(element.parent().css('left'));
         var newTop = -parseInt(element.parent().css('top')) - shiftDownPixels;
 
-        var newBackground = 'url(' + imageSrc + ') no-repeat ' + newLeft + 'px ' + newTop + 'px';
+        var newBackground = imageUrl + ' no-repeat ' + newLeft + 'px ' + newTop + 'px';
         
         return newBackground;
     }
