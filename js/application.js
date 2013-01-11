@@ -22,7 +22,7 @@
      * which sub-page we're on
      * 
      */
-    var handleHash = function() {
+    var handleHashChange = function() {
         
         if (window.location.hash) {
             var hash = window.location.hash.substring(1);
@@ -31,49 +31,75 @@
             // when we're on that particular page (e.g. the hash is #letterpress)
             $('ul#main-pages')
             .find('li#' + hash)
-                .find('a')
-                    .each(function(idx, element){
-                        var self = $(element);
-                    
-                        var newBackground = getNewBackground(self, imageMapHeight * 2);
-                        self.css('background', newBackground);
-                    })
-                .end()
+            .addClass('selected')
             .end()
             .find('li')
             .not('#' + hash)
-                .find('a')
-                .css('background', '');
-            
+            .removeClass('selected');
         }
     };
+    
+    var resetSelectedLinks = function() {
+        // slide the image down 467 * 2 pixels for the "selected" image
+        // when we're on that particular page (e.g. the hash is #letterpress)
+        $('ul#main-pages')
+        .find('li.selected')
+            .not('.hovering')
+            .find('a')
+                .each(function(idx, element){
+                    var self = $(element);
+                
+                    var newBackground = getNewBackground(self, imageMapHeight * 2);
+                    self.css('background', newBackground);
+                })
+            .end()
+            .end()
+        .end()
+        .find('li')
+        .not('.selected')
+            .find('a')
+            .css('background', '');
+    }
 
     // when hovering, just slide the image down 467 pixels
     $('ul#main-pages li a').hover(function() {
         var self = $(this);
 
-        var oldBackground = self.css('background') || '';
         var newBackground = getNewBackground(self, imageMapHeight);
         self.css('background', newBackground);
+        
+        self.parent().addClass('hovering');
 
     }, function() {
         var self = $(this);
         
-        self.css('background', '');
-        handleHash();
+        if (self.parent().hasClass('selected')) { // blue (selected)
+            var newBackground = getNewBackground(self, imageMapHeight * 2);
+            self.css('background', newBackground);
+        } else { // not blue
+            self.css('background', '');
+        }
+        
+        self.parent().removeClass('hovering');
+        
     })
 
     // add an obfuscated email address courtesy of http://www.javascriptobfuscator.com/
-    var _0xdf69 = ["\x73\x61\x6E\x6C\x75\x63\x69\x61\x70\x72\x65\x73\x73\x40\x67\x6D\x61\x69\x6C\x2E\x63\x6F\x6D"];
-    var emailAddress = _0xdf69[0];
+    var emailAddress = ["\x73\x61\x6E\x6C\x75\x63\x69\x61\x70\x72" 
+            + "\x65\x73\x73\x40\x67\x6D\x61\x69\x6C\x2E\x63\x6F\x6D"][0];
     
     $('li#email-address a').attr('href', 'mailto:' + emailAddress);
     
 
-    handleHash();
-
+    handleHashChange();
+    resetSelectedLinks();
+        
     // handle the hash if something is clicked on in this group
-    window.onhashchange = handleHash;
+    window.onhashchange = function(){
+        handleHashChange();
+        resetSelectedLinks();
+    }
+    
 
 
 })(jQuery);
