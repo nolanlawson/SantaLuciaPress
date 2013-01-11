@@ -55,8 +55,8 @@ a {
  */
 
 ul#main-pages {
-    width   : 700px;
-    height  : 467px;
+    width   : 650px;
+    height  : 410px;
     list-style: none;
     background: url(../images/mainpagemain_all.jpg) no-repeat 0 0;
     position: relative;
@@ -85,66 +85,73 @@ ul#main-pages li a span {
 
 
 li#site-id {
-    left   : 60px;
-    top    : 39px;
-    width  : 540px;
-    height : 318px;
+    left   : 82px;
+    top    : 57px;
+    width  : 491px;
+    height : 273px;
 }
 
 li#letterpress {
-    left   : 94px;
-    top    : 358px;
-    width  : 135px;
-    height : 25px;    
+    left   : 89px;
+    top    : 332px;
+    width  : 124px;
+    height : 22px;    
 }
 
 li#screenprinting {
-    left   : 231px;
-    top    : 353px;
-    width  : 153px;
-    height : 30px;
+    left   : 214px;
+    top    : 333px;
+    width  : 150px;
+    height : 24px;
 }
 
 li#design {
-    left   : 387px;
-    top    : 355px;
-    width  : 80px;
-    height : 30px;
-}
-
-li#illustration {
-    left   : 469px;
-    top    : 355px;
-    width  : 137px;
-    height : 29px;
-}
-
-li#about {
-    left   : 147px;
-    top    : 399px;
+    left   : 358px;
+    top    : 329px;
     width  : 81px;
     height : 28px;
 }
 
+li#illustration {
+    left   : 431px;
+    top    : 324px;
+    width  : 138px;
+    height : 32px;
+}
+
+li#about {
+    left   : 122px;
+    top    : 368px;
+    width  : 68px;
+    height : 24px;
+}
+
+li#contact {
+    left   : 192px;
+    top    : 370px;
+    width  : 72px;
+    height : 23px;
+}
+
 li#email-address {
-    left   : 230px;
-    top    : 400px;
-    width  : 192px;
-    height : 25px;
+    left   : 256px;
+    top    : 371px;
+    width  : 185px;
+    height : 22px;
 }
 
 li#facebook {
-    left   : 428px;
-    top    : 387px;
-    width  : 45px;
-    height : 51px;
+    left   : 441px;
+    top    : 361px;
+    width  : 43px;
+    height : 46px;
 }
 
 li#tumblr {
-    left   : 474px;
-    top    : 394px;
-    width  : 35px;
-    height : 37px;
+    left   : 484px;
+    top    : 363px;
+    width  : 42px;
+    height : 39px;
 }
 
 /*

@@ -4,7 +4,7 @@
 var SantaLuciaPress = {
     
     /* constants */
-    imageMapHeight : parseInt($('ul#main-pages').css('height')),
+    imageMapHeight : 542, //parseInt($('ul#main-pages').css('height')),
     imageUrl       : $('ul#main-pages').css('background').match(/url\([^)]+\)/)
     
 };

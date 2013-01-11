@@ -37,19 +37,19 @@
             
             var isEmpty = thumbnailsDiv.children().length == 0;
             var groupName = window.location.hash ? window.location.hash.substring(1) : null;
+            var imageGroup = groupName ? SantaLuciaPress.ImageSlideshow.images[(groupName)] : null;
             
             if (!isEmpty) {
                 // fade out
                 thumbnailsDiv.fadeOut().empty();
             }
             
-            if (groupName) {
+            if (imageGroup) {
                 
                 // fade something in
                 thumbnailsDiv.empty().hide();
                 
-                var images = SantaLuciaPress.ImageSlideshow.images;
-                var numImages = images[(groupName)].length;
+                var numImages = imageGroup.length;
 
                 // draw rows of 4
                 for (var i = 0; i < numImages; i += 4) {
@@ -57,7 +57,7 @@
                     var imageRow = $('<div></div').addClass('thumbnail-row');
                     
                     for (var j = i; j < Math.min(numImages, i + 4); j++) {
-                        var image = images[(groupName)][j];
+                        var image = imageGroup[j];
 
                         var thumbnailId = 'thumbnail-' + j;
 
