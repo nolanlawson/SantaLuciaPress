@@ -55,6 +55,7 @@
         self.trigger('redraw-link');
     })
     
+    // redraw the individual links depending on 3 states: hovering, selected, unselected
     $('ul#main-pages li a').bind('redraw-link', function(){
         var self = $(this);
         
