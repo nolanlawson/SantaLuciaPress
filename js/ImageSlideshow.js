@@ -20,9 +20,9 @@
          * Main definition of images to display in the slideshow
          */
         images: {
-            letterpress:    [tux, tux, tux, tux],
-            screenprinting: [tux, tux, tux, tux],
-            design:         [tux, tux, tux, tux],
+            letterpress:    [tux, tux, tux, tux, tux, tux, tux, tux, tux, tux],
+            screenprinting: [tux, tux, tux, tux, tux, tux],
+            design:         [tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux],
             illustration:   [tux, tux, tux, tux]
 
         },
@@ -49,28 +49,40 @@
                 thumbnailsDiv.empty().hide();
                 
                 var images = SantaLuciaPress.ImageSlideshow.images;
+                var numImages = images[(groupName)].length;
 
-                for (var i in images[(groupName)]) {
-                    var image = images[(groupName)][i];
+                // draw rows of 4
+                for (var i = 0; i < numImages; i += 4) {
+                    
+                    var imageRow = $('<div></div').addClass('thumbnail-row');
+                    
+                    for (var j = i; j < Math.min(numImages, i + 4); j++) {
+                        var image = images[(groupName)][j];
 
-                    var thumbnailId = 'thumbnail-' + i;
+                        var thumbnailId = 'thumbnail-' + j;
 
-                    // <a> with an <img> inside
-                    thumbnailsDiv.append($('<a></a>').attr({
-                        id: thumbnailId,
-                        href: image.large,
-                        title: image.title +" for group " + groupName
-                    }).append($('<img/>').attr('src', image.thumbnail)));
-
-                    // ColorBox properties
-                    $("#" + thumbnailId).colorbox({
-                        rel: groupName,
-                        slideshow: true,
-                        transition: "fade",
-                        width: "75%",
-                        height: "75%"
-                    });
-                }      
+                        // <a> with an <img> inside
+                        imageRow.append(
+                            $('<a></a>')
+                            .addClass('thumbnail')
+                            .attr({
+                                id: thumbnailId,
+                                href: image.large,
+                                title: image.title +" for group " + groupName
+                        }).append($('<img/>').attr('src', image.thumbnail)));
+                    }      
+                    
+                    thumbnailsDiv.append(imageRow);
+                }
+                
+                // ColorBox properties
+                $(".thumbnail").colorbox({
+                    rel: groupName,
+                    slideshow: true,
+                    transition: "fade",
+                    width: "75%",
+                    height: "75%"
+                });
                 
                 thumbnailsDiv.fadeIn().show();
                 
