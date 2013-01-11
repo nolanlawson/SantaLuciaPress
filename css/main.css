@@ -1,5 +1,8 @@
-/* Everything I need to know about image mapping with CSS I learned from this site:
- * http://www.noobcube.com/tutorials/html-css/css-image-maps-a-beginners-guide-/
+/* 
+ * Main CSS style sheet for the Santa Lucia Press home page.
+ */
+/*
+ * Styles for the basic document stuff: body, h1, etc.
  */
 html {
     background : #adddd1;
@@ -42,6 +45,13 @@ p {
 a {
 	color: #fc8524;
 }
+
+/*
+ * Styles for the main links in the image map.
+ * Everything I need to know about image mapping with CSS I learned from this site:
+ * http://www.noobcube.com/tutorials/html-css/css-image-maps-a-beginners-guide-/
+ *
+ */
 
 ul#main-pages {
     width   : 700px;
@@ -125,5 +135,23 @@ li#tumblr {
     height : 37px;
 }
 
+/*
+ * Styles for the image thumbnails and slideshow
+ */
 
+#image-thumbnails {
+    margin : 0 50px 0 50px;
+}
+
+#image-thumbnails a {
+    margin : 0 10px 0 10px;
+    height : 100%;
+    border : 0;
+    outline: 0;
+}
+
+#image-thumbnails a img {
+    /* (840 / 4) - 20 for the gutter */
+    width : 190px;
+}
 

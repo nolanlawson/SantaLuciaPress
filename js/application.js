@@ -3,6 +3,8 @@
  * @author nolanlawson
  */
 (function() {
+    
+    
 
     var imageMapHeight = parseInt($('ul#main-pages').css('height'));
     var imageUrl = $('ul#main-pages').css('background').match(/url\([^)]+\)/);
