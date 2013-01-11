@@ -12,6 +12,9 @@
     };
 
     SantaLuciaPress.ImageSlideshow = {
+        
+        // top offset for the site id, i.e. the big logo, when the images appear
+        siteIdOffset   : '-4em',
 
         /** 
          * Main definition of images to display in the slideshow
@@ -30,38 +33,56 @@
          */
         refreshImages: function() {
 
-            var thumbnailsDiv = $('#image-thumbnails').empty();
+            var thumbnailsDiv = $('#image-thumbnails');
             
-            // if we're not on a subpage (illustration, etc.), do nothing
-            if (!window.location.hash) {
-                return;
+            var isEmpty = thumbnailsDiv.children().length == 0;
+            var groupName = window.location.hash ? window.location.hash.substring(1) : null;
+            
+            if (!isEmpty) {
+                // fade out
+                thumbnailsDiv.fadeOut().empty();
             }
             
-            var groupName = window.location.hash.substring(1);
+            if (groupName) {
+                
+                // fade something in
+                thumbnailsDiv.empty().hide();
+                
+                var images = SantaLuciaPress.ImageSlideshow.images;
 
-            var images = SantaLuciaPress.ImageSlideshow.images;
+                for (var i in images[(groupName)]) {
+                    var image = images[(groupName)][i];
 
-            for (var i in images[(groupName)]) {
-                var image = images[(groupName)][i];
+                    var thumbnailId = 'thumbnail-' + i;
 
-                var thumbnailId = 'thumbnail-' + i;
+                    // <a> with an <img> inside
+                    thumbnailsDiv.append($('<a></a>').attr({
+                        id: thumbnailId,
+                        href: image.large,
+                        title: image.title +" for group " + groupName
+                    }).append($('<img/>').attr('src', image.thumbnail)));
 
-                // <a> with an <img> inside
-                thumbnailsDiv.append($('<a></a>').attr({
-                    id: thumbnailId,
-                    href: image.large,
-                    title: image.title +" for group " + groupName
-                }).append($('<img/>').attr('src', image.thumbnail)));
-
-                // ColorBox properties
-                $("#" + thumbnailId).colorbox({
-                    rel: groupName,
-                    slideshow: true,
-                    transition: "fade",
-                    width: "75%",
-                    height: "75%"
-                });
+                    // ColorBox properties
+                    $("#" + thumbnailId).colorbox({
+                        rel: groupName,
+                        slideshow: true,
+                        transition: "fade",
+                        width: "75%",
+                        height: "75%"
+                    });
+                }      
+                
+                thumbnailsDiv.fadeIn().show();
+                
+                // move logo down
+                $('.container').css('top',this.siteIdOffset);
+                
+            } else { // no content in the slideshow
+                
+                // put the logo back where it is normally
+                $('.container').css('top','');
             }
+
         }
 
     };

@@ -20,6 +20,7 @@ body {
 
 .container {
     margin: 0 10px 0 10px;
+    position : relative;
 }
 
 img {
@@ -63,6 +64,10 @@ ul#main-pages {
     padding: 0;
 }
 
+#main-pages-div {
+    
+}
+
 ul#main-pages li {
 	position: absolute;
 }
@@ -78,6 +83,13 @@ ul#main-pages li a span {
     display : none;
 }
 
+
+li#site-id {
+    left   : 60px;
+    top    : 39px;
+    width  : 540px;
+    height : 318px;
+}
 
 li#letterpress {
     left   : 94px;
@@ -140,7 +152,8 @@ li#tumblr {
  */
 
 #image-thumbnails {
-    margin : 0 50px 0 50px;
+    margin : 0 auto;
+    width  : 800px;
 }
 
 #image-thumbnails a {
@@ -151,7 +164,7 @@ li#tumblr {
 }
 
 #image-thumbnails a img {
-    /* (840 / 4) - 20 for the gutter */
-    width : 190px;
+    /* (800 / 4) - 20 for the gutter */
+    width : 180px;
 }
 
