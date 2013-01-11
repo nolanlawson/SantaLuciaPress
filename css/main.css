@@ -1,5 +1,8 @@
+/* Everything I need to know about image mapping with CSS I learned from this site:
+ * http://www.noobcube.com/tutorials/html-css/css-image-maps-a-beginners-guide-/
+ */
 html {
-    background : #ddd;
+    background : #adddd1;
     padding : 2em 0 2em 0;
 }
 
@@ -9,9 +12,6 @@ body {
 	color: #333;
 	margin: 0 auto;
 	max-width: 960px;
-	background: #FFF;
-	-webkit-box-shadow: 0 0 .3em #333;
-    box-shadow: 0 0 .3em #333;
 	font-family: Helvetica, Arial;
 }
 
@@ -42,3 +42,88 @@ p {
 a {
 	color: #fc8524;
 }
+
+ul#main-pages {
+    width   : 700px;
+    height  : 467px;
+    list-style: none;
+    background: url(../images/mainpagemain_all.jpg) no-repeat 0 0;
+    position: relative;
+    margin : auto;
+    padding: 0;
+}
+
+ul#main-pages li {
+	position: absolute;
+}
+
+ul#main-pages li a{
+	display: block;
+	height: 100%;
+	text-decoration: none;
+}
+
+ul#main-pages li a span {
+    /* don't show the text */
+    display : none;
+}
+
+
+li#letterpress {
+    left   : 94px;
+    top    : 358px;
+    width  : 135px;
+    height : 25px;    
+}
+
+li#screenprinting {
+    left   : 231px;
+    top    : 353px;
+    width  : 153px;
+    height : 30px;
+}
+
+li#design {
+    left   : 387px;
+    top    : 355px;
+    width  : 80px;
+    height : 30px;
+}
+
+li#illustration {
+    left   : 469px;
+    top    : 355px;
+    width  : 137px;
+    height : 29px;
+}
+
+li#about {
+    left   : 147px;
+    top    : 399px;
+    width  : 81px;
+    height : 28px;
+}
+
+li#email-address {
+    left   : 230px;
+    top    : 400px;
+    width  : 192px;
+    height : 25px;
+}
+
+li#facebook {
+    left   : 428px;
+    top    : 387px;
+    width  : 45px;
+    height : 51px;
+}
+
+li#twitter {
+    left   : 474px;
+    top    : 394px;
+    width  : 35px;
+    height : 37px;
+}
+
+
+
