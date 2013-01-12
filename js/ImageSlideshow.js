@@ -42,7 +42,7 @@
                         var thumbnailId = 'thumbnail-' + j;
 
                         // <a> with an <img> inside
-                        var title = image.title +" for group " + groupName;
+                        var title = image.title;
                         imageRow.append(
                             $('<div></div>')
                             .addClass('thumbnail')
@@ -70,9 +70,9 @@
                 // ColorBox properties
                 $(".thumbnail-link").colorbox({
                     rel: groupName,
-                    transition: "elastic",
-                    width: "75%",
-                    height: "75%"
+                    transition: "elastic"
+                    //width: "75%",
+                    //height: "75%"
                 });
                 
                 // show a title when scrolling over
