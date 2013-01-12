@@ -62,36 +62,58 @@
                         var thumbnailId = 'thumbnail-' + j;
 
                         // <a> with an <img> inside
+                        var title = image.title +" for group " + groupName;
                         imageRow.append(
-                            $('<a></a>')
+                            $('<div></div>')
                             .addClass('thumbnail')
-                            .attr({
-                                id: thumbnailId,
-                                href: image.large,
-                                title: image.title +" for group " + groupName
-                        }).append($('<img/>').attr('src', image.thumbnail)));
+                                .append($('<a></a>')
+                                .addClass('thumbnail-link')
+                                .attr({
+                                    id    : thumbnailId,
+                                    href  : image.large,
+                                    title : title
+                                })
+                                .append($('<div></div>')
+                                    .addClass('thumbnail-label')
+                                    .append($('<span></span>')
+                                        .text(title))
+                                    .hide())
+                                .append($('<img/>')
+                                    .attr({
+                                        src   : image.thumbnail
+                                    }))));
                     }      
                     
                     thumbnailsDiv.append(imageRow);
                 }
                 
                 // ColorBox properties
-                $(".thumbnail").colorbox({
+                $(".thumbnail-link").colorbox({
                     rel: groupName,
                     transition: "elastic",
                     width: "75%",
                     height: "75%"
                 });
                 
+                // show a title when scrolling over
+                var toggleLabel = function() {
+                    $(this).find('.thumbnail-label').toggle();
+                }
+                $('.thumbnail').hover(toggleLabel, toggleLabel);
+                
                 thumbnailsDiv.fadeIn().show();
                 
                 // move logo down
                 $('.container').css('top',this.siteIdOffset);
+                // quit movin' around!
+                window.scrollTo(0, 0);
                 
             } else { // no content in the slideshow
                 
                 // put the logo back where it is normally
                 $('.container').css('top','');
+                // quit movin' around!
+                window.scrollTo(0, 0);
             }
 
         }

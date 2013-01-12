@@ -167,7 +167,11 @@ li#tumblr {
     width  : 800px;
 }
 
-#image-thumbnails a {
+.thumbnail {
+    display   : inline-block;
+}
+
+.thumbnail a {
     margin    : 10px 10px 10px 10px;
     height    : 100%;
     border    : 0;
@@ -175,7 +179,7 @@ li#tumblr {
     display   : inline-block;
 }
 
-#image-thumbnails a:hover {
+.thumbnail a:hover {
     /* Fallback for web browsers that doesn't support RGBa */
     background: rgb(255, 255, 255);
     /* RGBa with opacity */
@@ -184,9 +188,36 @@ li#tumblr {
     border-radius      : 3px;
 }
 
-
-#image-thumbnails a img {
+.thumbnail a img {
     /* (800 / 4) - 20 for the gutter */
     width : 180px;
+    text-align:center; 
+    float:left; 
+    position:relative;
 }
+
+/* floating label over image */
+.thumbnail a div {
+    margin             : 5px 10px 5px 10px;
+    padding            : 5px; 
+    width              : 150px; 
+    
+    float              : left; 
+    position           : absolute; 
+    z-index            : 1;
+    text-align         : center;
+    
+    background-color   : #000;
+    border-radius      : 2px;
+    
+    opacity            : 0.7;
+    filter             : alpha(opacity=70); /* For IE8 and earlier */
+}
+
+.thumbnail a div span {
+    width             : 180px; 
+    color             : #FFF; 
+    font-size         : 0.8em;
+}
+
 
