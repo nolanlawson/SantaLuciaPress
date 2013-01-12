@@ -34,11 +34,11 @@
                 // slide the image down 467 * 2 pixels for the "selected" image
                 // when we're on that particular page (e.g. the hash is #letterpress)
                 $('ul#main-pages')
-                    .find('li#' + hash)
+                    .find('li#item-' + hash)
                         .addClass('selected')
                     .end()
                     .find('li')
-                    .not('#' + hash)
+                    .not('#item-' + hash)
                         .removeClass('selected');
             }
 
