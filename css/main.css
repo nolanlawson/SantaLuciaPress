@@ -126,24 +126,24 @@ li#illustration {
 }
 
 li#about {
-    left   : 122px;
+    left   : 129px;
     top    : 368px;
-    width  : 68px;
-    height : 24px;
+    width  : 51px;
+    height : 29px;
 }
 
 li#contact {
-    left   : 192px;
-    top    : 370px;
-    width  : 72px;
-    height : 23px;
+    left   : 182px;
+    top    : 368px;
+    width  : 70px;
+    height : 29px;
 }
 
 li#email-address {
-    left   : 256px;
-    top    : 371px;
-    width  : 185px;
-    height : 22px;
+    left   : 258px;
+    top    : 368px;
+    width  : 183px;
+    height : 29px;
 }
 
 li#facebook {
