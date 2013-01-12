@@ -180,11 +180,11 @@ li#item-tumblr {
 
 #image-thumbnails {
     margin : 0 auto;
-    width  : 800px;
+    width  : 680px;
 }
 
 .thumbnail-row {
-    width  : 800px;
+    width  : 680px;
 }
 
 .thumbnail {
@@ -207,8 +207,9 @@ li#item-tumblr {
 }
 
 .thumbnail a img {
-    /* (800 / 4) - 20 for the gutter */
-    width : 180px;
+    /* (680 / 4) - 20 for the gutter */
+    width : 150px;
+    height : 150px;
     text-align:center; 
     float:left; 
     position:relative;
