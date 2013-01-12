@@ -75,12 +75,6 @@
                     //height: "75%"
                 });
                 
-                // show a title when scrolling over
-                var toggleLabel = function() {
-                    $(this).find('.thumbnail-label').toggle();
-                }
-                $('.thumbnail').hover(toggleLabel, toggleLabel);
-                
                 thumbnailsDiv.fadeIn().show();
                 
             }
