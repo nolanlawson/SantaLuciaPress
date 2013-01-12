@@ -135,13 +135,93 @@
         large: 'images/L024.jpg',
         title: 'Here be text'
 	};
+		var image2001 = {
+        thumbnail: 'images/2001.jpg',
+        large: 'images/L2001.jpg',
+        title: 'Here be text'
+    };
+		var image2002 = {
+        thumbnail: 'images/2002.jpg',
+        large: 'images/L2002.jpg',
+        title: 'Here be text'
+    };
+		var image2003 = {
+        thumbnail: 'images/2003.jpg',
+        large: 'images/L2003.jpg',
+        title: 'Here be text'
+    };
+		var image2004 = {
+        thumbnail: 'images/2004.jpg',
+        large: 'images/L2004.jpg',
+        title: 'Here be text'
+    };
+		var image2005 = {
+        thumbnail: 'images/2005.jpg',
+        large: 'images/L2005.jpg',
+        title: 'Here be text'
+    };
+		var image2006 = {
+        thumbnail: 'images/2006.jpg',
+        large: 'images/L2006.jpg',
+        title: 'Here be text'
+    };
+		var image2007 = {
+        thumbnail: 'images/2007.jpg',
+        large: 'images/L2007.jpg',
+        title: 'Here be text'
+    };
+		var image2008 = {
+        thumbnail: 'images/2008.jpg',
+        large: 'images/L2008.jpg',
+        title: 'Here be text'
+    };
+		var image2009 = {
+        thumbnail: 'images/2009.jpg',
+        large: 'images/L2009.jpg',
+        title: 'Here be text'
+    };
+		var image2010 = {
+        thumbnail: 'images/2010.jpg',
+        large: 'images/L2010.jpg',
+        title: 'Here be text'
+    };
+		var image2011 = {
+        thumbnail: 'images/2011.jpg',
+        large: 'images/L2011.jpg',
+        title: 'Here be text'
+    };
+		var image2012 = {
+        thumbnail: 'images/2012.jpg',
+        large: 'images/L2012.jpg',
+        title: 'Here be text'
+    };
+		var image2013 = {
+        thumbnail: 'images/2013.jpg',
+        large: 'images/L2013.jpg',
+        title: 'Here be text'
+    };
+		var image2014 = {
+        thumbnail: 'images/2014.jpg',
+        large: 'images/L2014.jpg',
+        title: 'Here be text'
+    };
+		var image2015 = {
+        thumbnail: 'images/2015.jpg',
+        large: 'images/L2015.jpg',
+        title: 'Here be text'
+    };
+		var image2016 = {
+        thumbnail: 'images/2016.jpg',
+        large: 'images/L2016.jpg',
+        title: 'Here be text'
+    };
     SantaLuciaPress.SiteContent = {
         
         slideshowImages : {
             letterpress    : [image001, image002, image003, image004, image005, image006, image007, image008, image009, image010, image011, image012, image013, image014, image015, image016, image017, image018, image019, image020, image021, image022, image023, image024],
             screenprinting : [image001, image002, image003, image004, image005, image006, image007, image008, image009, image010, image011, image012, image013, image014, image015, image016, image017, image018, image019, image020, image021, image022, image023, image024],
-            design         : [tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux],
-            illustration   : [tux, tux, tux, tux]
+            design         : [image2001, image2002, image2003, image2004, image2005, image2006, image2007, image2008, image2009, image2010, image2011, image2012, image2013, image2014, image2015, image2016],
+            illustration   : [image2001, image2002, image2003, image2004, image2005, image2006, image2007, image2008, image2009, image2010, image2011, image2012, image2013, image2014, image2015, image2016],
 
         },
         
