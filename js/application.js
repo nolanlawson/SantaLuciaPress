@@ -31,7 +31,23 @@
         window.scrollTo(0,0); // quit movin' around!
     });
 
+    // ensure that the slideshow images are all loaded in the background on initial load of this page
+    var imagesToLoad = {};
+    for (var key in SantaLuciaPress.SiteContent.slideshowImages) {
+        var imageDefs = SantaLuciaPress.SiteContent.slideshowImages[key];
+        for (var i in imageDefs) {
+            var imageDef = imageDefs[i];
+            imagesToLoad[(imageDef.thumbnail)] = true;
+        }
+    }
+    
+    for (var imageToLoad in imagesToLoad) {
+        // load in advance
+        var img = new Image();
+        img.src = imageToLoad;
+    }
 
+    // function to be called on initial load and whenever an anchor link is clicked
     var refreshPage = function() {
         // handle the hash if something is clicked on in this group
         SantaLuciaPress.ImageMap.handleHashChange();
@@ -50,6 +66,7 @@
             $('.container').css('top','');
         }
     }
+    
 
     // do the same thing if something is clicked
     window.onhashchange = function(){
@@ -57,8 +74,6 @@
     }
     
     refreshPage();
-    setTimeout(function() {
-        window.scrollTo(0, 0);
-    }, 1);
+    
     
 })(jQuery);
