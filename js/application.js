@@ -30,7 +30,22 @@
         SantaLuciaPress.ImageMap.handleHashChange();
 
         // draw the slideshow
-        SantaLuciaPress.ImageSlideshow.refreshImages();
+        SantaLuciaPress.ImageSlideshow.refresh();
+        
+        // refresh any additional text, if it exists
+        SantaLuciaPress.TextContent.refresh();
+        
+        if (window.location.hash) { // additional content showing
+            // move logo down
+            $('.container').css('top', SantaLuciaPress.siteIdOffset);
+            // quit movin' around!
+            window.scrollTo(0, 0);
+        } else { // no content showing
+            // put the logo back where it is normally
+            $('.container').css('top','');
+            // quit movin' around!
+            window.scrollTo(0, 0);
+        }
     }
     
     refreshPage();

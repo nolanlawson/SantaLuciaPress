@@ -1,43 +1,23 @@
 /*!
- * JavaScript file describing the images used in the slideshow.
+ * JavaScript file with the main logic for the image slideshow.
  *
  * @author nolanlawson
  */
 (function() {
 
-    var tux = {
-        thumbnail: 'http://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Tux.png/220px-Tux.png',
-        large: 'http://content.comrz.com/AcuCustom/Sitename/DAM/374/Tux.png',
-        title: 'The tux penguin!'
-    };
-
     SantaLuciaPress.ImageSlideshow = {
-        
-        // top offset for the site id, i.e. the big logo, when the images appear
-        siteIdOffset   : '-4em',
-
-        /** 
-         * Main definition of images to display in the slideshow
-         */
-        images: {
-            letterpress:    [tux, tux, tux, tux, tux, tux, tux, tux, tux, tux],
-            screenprinting: [tux, tux, tux, tux, tux, tux],
-            design:         [tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux],
-            illustration:   [tux, tux, tux, tux]
-
-        },
 
         /*
          * write the images in a format that ColorBox will understand
          * Write it to the #image-thumbnails div
          */
-        refreshImages: function() {
+        refresh: function() {
 
             var thumbnailsDiv = $('#image-thumbnails');
             
             var isEmpty = thumbnailsDiv.children().length == 0;
             var groupName = window.location.hash ? window.location.hash.substring(1) : null;
-            var imageGroup = groupName ? SantaLuciaPress.ImageSlideshow.images[(groupName)] : null;
+            var imageGroup = groupName ? SantaLuciaPress.SiteContent.slideshowImages[(groupName)] : null;
             
             if (!isEmpty) {
                 // fade out
@@ -103,17 +83,6 @@
                 
                 thumbnailsDiv.fadeIn().show();
                 
-                // move logo down
-                $('.container').css('top',this.siteIdOffset);
-                // quit movin' around!
-                window.scrollTo(0, 0);
-                
-            } else { // no content in the slideshow
-                
-                // put the logo back where it is normally
-                $('.container').css('top','');
-                // quit movin' around!
-                window.scrollTo(0, 0);
             }
 
         }

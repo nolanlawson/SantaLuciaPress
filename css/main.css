@@ -28,12 +28,13 @@ img {
 }
 
 h1 {
-	color: #fc8524;
+	color: #bb1505;
 	border-bottom: 1px solid #ccc;
 	font-weight: normal;
+	text-align : center;
 	font-size: 1.6em;
 	padding: 5px 0 10px;
-	margin: 0px;
+	margin: 0px 0px 10px 0px;
 }
 
 p {
@@ -44,7 +45,12 @@ p {
 }
 
 a {
-	color: #fc8524;
+	color: #bb1505;
+	text-decoration : none;
+}
+
+a:hover {
+    text-decoration : underline;
 }
 
 /*
@@ -216,4 +222,15 @@ li#tumblr {
     font-size         : 0.8em;
 }
 
-
+/** style for the text shown in "About" and "Contact" */
+#additional-text {
+    margin           : 5px 175px 5px 175px;
+    padding          : 20px 50px 20px 50px;
+    
+    border-radius    : 2px;
+    
+    /* Fallback for web browsers that doesn't support RGBa */
+    background: rgb(255, 255, 255);
+    /* RGBa with 0.6 opacity */
+    background: rgba(255, 255, 255, 0.7);
+}
