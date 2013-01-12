@@ -115,24 +115,24 @@
         large: 'images/L020.jpg',
         title: 'Here be text'
     };
-		var image012 = {
+		var image021 = {
         thumbnail: 'images/021.jpg',
-        large: 'images/L020.jpg',
+        large: 'images/L021.jpg',
         title: 'Here be text'
     };
-		var image012 = {
+		var image022 = {
         thumbnail: 'images/022.jpg',
-        large: 'images/L012.jpg',
+        large: 'images/L022.jpg',
         title: 'Here be text'
     };
-		var image012 = {
+		var image023 = {
         thumbnail: 'images/023.jpg',
-        large: 'images/L012.jpg',
+        large: 'images/L023.jpg',
         title: 'Here be text'
     };
-		var image012 = {
+		var image023 = {
         thumbnail: 'images/024.jpg',
-        large: 'images/L020.jpg',
+        large: 'images/L023.jpg',
         title: 'Here be text'
     };
     SantaLuciaPress.SiteContent = {
