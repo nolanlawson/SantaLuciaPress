@@ -130,14 +130,14 @@
         large: 'images/L023.jpg',
         title: 'Here be text'
     };
-		var image023 = {
+		var image024 = {
         thumbnail: 'images/024.jpg',
-        large: 'images/L023.jpg',
+        large: 'images/L024.jpg',
         title: 'Here be text'
-    };
+	};
     SantaLuciaPress.SiteContent = {
         
-        slideshowImages : {, 
+        slideshowImages : {
             letterpress    : [image001, image002, image003, image004, image005, image006, image007, image008, image009, image010, image011, image012, image013, image014, image015, image016, image017, image018, image019, image020, image021, image022, image023, image024],
             screenprinting : [image001, image002, image003, image004, image005, image006, image007, image008, image009, image010, image011, image012, image013, image014, image015, image016, image017, image018, image019, image020, image021, image022, image023, image024],
             design         : [tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux, tux],
