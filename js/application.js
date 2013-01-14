@@ -27,6 +27,7 @@
     // handle the hash changes ourselves
     $("a[href^='#']").click(function(event) {
         event.preventDefault();
+        SantaLuciaPress.oldHash = window.location.hash;
         window.location.hash = this.hash;
         window.scrollTo(0,0); // quit movin' around!
     });
@@ -49,22 +50,37 @@
 
     // function to be called on initial load and whenever an anchor link is clicked
     var refreshPage = function() {
-        // handle the hash if something is clicked on in this group
-        SantaLuciaPress.ImageMap.handleHashChange();
+        
+        var showContentFunction = function() {
+            // handle the hash if something is clicked on in this group
+            SantaLuciaPress.ImageMap.handleHashChange();
 
-        // draw the slideshow
-        SantaLuciaPress.ImageSlideshow.refresh();
-        
-        // refresh any additional text, if it exists
-        SantaLuciaPress.TextContent.refresh();
-        
-        if (window.location.hash) { // additional content showing
-            // move logo down
-            $('.container').css('top', SantaLuciaPress.siteIdOffset);
-        } else { // no content showing
-            // put the logo back where it is normally
-            $('.container').css('top','');
+            // draw the slideshow
+            SantaLuciaPress.ImageSlideshow.refresh();
+
+            // refresh any additional text, if it exists
+            SantaLuciaPress.TextContent.refresh();
+
+            if (window.location.hash) { // additional content showing
+                // move logo down
+                $('.container').css('top', SantaLuciaPress.siteIdOffset);
+            } else { // no content showing
+                // put the logo back where it is normally
+                $('.container').css('top','');
+            }
+
+            if (window.location.hash) { // new hash
+                $('#main-content').fadeIn(SantaLuciaPress.animationFadeTime);
+            }
         }
+        
+        // fade out the stuff below the logo if it exists
+        if (SantaLuciaPress.oldHash) { // old hash
+            $('#main-content').fadeOut(SantaLuciaPress.animationFadeTime, showContentFunction);
+        } else {
+            showContentFunction();
+        }
+        
     }
     
 

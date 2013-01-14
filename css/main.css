@@ -247,10 +247,16 @@ li#item-tumblr {
     font-size         : 0.8em;
 }
 
+/** style for the text shown for individual slideshow thumbnails, e.g. Illustration */
+.slideshow-text {
+    padding          : 5px 30px 20px 30px;
+    
+    border-radius    : 2px;    
+}
+
 /** style for the text shown in "About" and "Contact" */
 #additional-text {
     margin           : 5px 175px 5px 175px;
     padding          : 0 50px 0 50px;
     
-    border-radius    : 2px;
 }

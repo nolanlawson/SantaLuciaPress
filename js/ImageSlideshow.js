@@ -20,16 +20,22 @@
             var imageGroup = groupName ? SantaLuciaPress.SiteContent.slideshowImages[(groupName)] : null;
             
             if (!isEmpty) {
-                // fade out
-                thumbnailsDiv.fadeOut().empty();
+                // nothing to show
+                thumbnailsDiv.empty();
             }
             
             if (imageGroup) {
                 
-                // fade something in
-                thumbnailsDiv.empty().hide();
+                var images = imageGroup.images;
+                var text = imageGroup.text;
                 
-                var numImages = imageGroup.length;
+                // fade something in
+                thumbnailsDiv.empty().hide().append(
+                    $('<div></div>').addClass('slideshow-text')
+                        .append($('<h1></h1>').text(groupName))
+                        .append($('<p></p>').text(text)));
+                
+                var numImages = images.length;
 
                 // draw rows of 4
                 for (var i = 0; i < numImages; i += 4) {
@@ -37,7 +43,7 @@
                     var imageRow = $('<div></div').addClass('thumbnail-row');
                     
                     for (var j = i; j < Math.min(numImages, i + 4); j++) {
-                        var image = imageGroup[j];
+                        var image = images[j];
 
                         var thumbnailId = 'thumbnail-' + j;
 
@@ -75,7 +81,7 @@
                     //height: "75%"
                 });
                 
-                thumbnailsDiv.fadeIn().show();
+                thumbnailsDiv.show();
                 
             }
 
