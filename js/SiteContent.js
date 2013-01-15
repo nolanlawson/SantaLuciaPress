@@ -218,7 +218,7 @@
                     image016, image017, image018, image019, image020, image021, image022, image023, 
                     image024],
                     
-                  text   : "Santa Lucia Press is all about bein' American 'n' shit, yo.  Like, for real." 
+                  text   : "" 
                 },
                 
             screenprinting : 
@@ -226,21 +226,21 @@
                     image009, image010, image011, image012, image013, image014, image015, image016, image017, 
                     image018, image019, image020, image021, image022, image023, image024],
                     
-                  text   : "We've been keepin' it real, since like 2009. (But as BT advised, don't say 2009.)"
+                  text   : ""
               },
               
             design         : 
                 { images : [image2001, image2002, image2003, image2004, image2005, image2006, image2007, 
                     image2008, image2009, image2010, image2011, image2012, image2013, image2014, image2015, 
                     image2016],
-                  text   : "By the way, Karen, you can put double-quotes in JavaScript strings \"like this\""
+                  text   : ""
               },
               
             illustration   : 
                 { images : [image2001, image2002, image2003, image2004, image2005, image2006, image2007, 
                     image2008, image2009, image2010, image2011, image2012, image2013, image2014, image2015, 
                     image2016],
-                  text   : "I'm not even in Geneva yet and I miss you already, Baby."
+                  text   : ""
               }
 
         },
