@@ -218,7 +218,7 @@
                     image016, image017, image018, image019, image020, image021, image022, image023, 
                     image024],
                     
-                  text   : "" 
+                  text   : "We blend a combination of modern techniques with old school style. Each print is hand-set and pulled on our mid-century presses. Custom orders available." 
                 },
                 
             screenprinting : 
