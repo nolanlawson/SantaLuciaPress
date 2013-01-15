@@ -34,10 +34,13 @@
     // ensure that the slideshow images are all loaded in the background on initial load of this page
     var imagesToLoad = {};
     for (var key in SantaLuciaPress.SiteContent.slideshowImages) {
-        var imageDefs = SantaLuciaPress.SiteContent.slideshowImages[key];
+        var imageDefs = SantaLuciaPress.SiteContent.slideshowImages[key].images;
         for (var i in imageDefs) {
             var imageDef = imageDefs[i];
-            imagesToLoad[(imageDef.thumbnail)] = true;
+            if (!imageDef || !imageDef.thumbnail) {
+                continue;
+            }
+            imagesToLoad[imageDef.thumbnail] = true;
         }
     }
     
